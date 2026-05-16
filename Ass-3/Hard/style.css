@@ -1,0 +1,941 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: #0D0B14;
+}
+
+/* ═══════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════ */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(13, 11, 20, 0.95);
+    border-bottom: 1px solid rgba(168,85,247, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Bracket-style logo box */
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.logo-bracket {
+    display: block;
+    width: 8px;
+    height: 26px;
+    border: 2px solid #A855F7;
+    flex-shrink: 0;
+}
+
+.logo-bracket-left {
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+}
+
+.logo-bracket-right {
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+}
+
+.logo h1 {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-title {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.logo-sub {
+    font-size: 10px;
+    font-weight: 500;
+    color: #A855F7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Legacy selectors kept for fallback */
+.logo span {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+header ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: color 0.3s;
+    color: #ccc;
+}
+
+header ul li a:hover,
+header ul li a.active {
+    color: #fff;
+}
+
+header ul li a.active {
+    border-bottom: 2px solid #A855F7;
+    color: #fff;
+}
+
+header button {
+    padding: 10px 22px;
+    background-color: transparent;
+    border: 1.5px solid #A855F7;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header button:hover {
+    background-color: #A855F7;
+    color: #fff;
+}
+
+/* ═══════════════════════════════════════════
+   CONTAINER
+═══════════════════════════════════════════ */
+.container {
+    padding-top: 72px;
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero {
+    background-image: url(./image/herobg.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 40px 50px 80px;
+    min-height: 88vh;
+    overflow: hidden;
+}
+
+.hero>img {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    width: 55vw;
+    max-width: 780px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-left {
+    width: 45%;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-left>h2:first-child {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.Crimsontext {
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 8px 0;
+}
+
+.Crimsontext span {
+    color: #A855F7;
+}
+
+.hero-left>h2:nth-child(3) {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ccc;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+.hero-left p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.btn {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.btn button {
+    padding: 13px 26px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+#btn-discuss {
+    background: linear-gradient(90deg, #0D0B14 40%, #581c87);
+    color: #fff;
+    border: 1.5px solid #A855F7;
+}
+
+#btn-discuss:hover {
+    background: linear-gradient(90deg, #581c87, #A855F7);
+}
+
+#btn-showreel {
+    background-color: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+#btn-showreel .fa-play {
+    font-size: 10px;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-showreel:hover {
+    border-color: #A855F7;
+    color: #A855F7;
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 2;
+    position: relative;
+    align-items: flex-end;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    background: rgba(168,85,247, 0.04);
+    border: 1px solid rgba(168,85,247, 0.12);
+    border-radius: 12px;
+    min-width: 160px;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.feature:hover {
+    border-color: rgba(168,85,247, 0.4);
+    background: rgba(168,85,247, 0.08);
+}
+
+.feature i {
+    font-size: 22px;
+    color: #A855F7;
+}
+
+.feature h2 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════════
+   ACHIEVER BAR
+═══════════════════════════════════════════ */
+.achiver {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    background: rgba(20, 15, 35, 0.85);
+    border: 1px solid rgba(168,85,247, 0.18);
+    border-radius: 12px;
+    position: relative;
+    margin: -60px auto 60px;
+    width: 88%;
+    padding: 28px 60px;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+}
+
+.achiver .Lstar {
+    position: absolute;
+    left: -8%;
+    top: -130%;
+    width: 220px;
+    pointer-events: none;
+    filter: brightness(0.8);
+}
+
+.achiver .Rstar {
+    position: absolute;
+    right: -8%;
+    top: -130%;
+    width: 220px;
+    pointer-events: none;
+    filter: brightness(0.8);
+}
+
+.box {
+    flex: 1;
+    padding: 0 30px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.box:last-child {
+    border-right: none;
+}
+
+.box h1 {
+    font-size: 42px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+.box p {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════
+   PROJECTS SECTION
+═══════════════════════════════════════════ */
+.cardHead {
+    padding: 0 50px 70px;
+}
+
+.project-head {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.ph-title {
+    text-align: center;
+}
+
+.our-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #A855F7;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.project-head h2 {
+    font-size: 42px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page {
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    display: flex;
+    gap: 10px;
+}
+
+.page i {
+    font-size: 14px;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.page i:hover {
+    background-color: #A855F7;
+    border-color: #A855F7;
+    color: #fff;
+}
+
+.cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #130E1F;
+    border-radius: 14px;
+    overflow: hidden;
+    flex: 1;
+    max-width: 360px;
+    border: 1px solid #1E1230;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(168,85,247, 0.3);
+}
+
+.card-img {
+    position: relative;
+}
+
+.card-img img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(168,85,247, 0.15);
+    border: 1px solid rgba(168,85,247, 0.4);
+    color: #A855F7;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-body {
+    padding: 16px 18px 18px;
+}
+
+.card-body p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.card .icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Licon {
+    display: flex;
+    gap: 14px;
+}
+
+.Licon i {
+    font-size: 20px;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.Licon i:hover {
+    color: #A855F7;
+}
+
+.icon .fa-arrow-right {
+    font-size: 14px;
+    color: #A855F7;
+    border: 1.5px solid rgba(168,85,247, 0.4);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.icon .fa-arrow-right:hover {
+    background-color: #A855F7;
+    color: #fff;
+}
+
+/* ═══════════════════════════════════════════
+   HOW WE WORK
+═══════════════════════════════════════════ */
+.how-work {
+    padding: 20px 50px 90px;
+    text-align: center;
+}
+
+.how-work-title {
+    margin-bottom: 55px;
+}
+
+.how-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.how-work-title h2 {
+    font-size: 46px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #A855F7;
+}
+
+/* ─── Timeline wrapper ─── */
+.steps-timeline {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+    width: 100%;
+}
+
+/* The horizontal connecting line that runs BEHIND the cards */
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168,85,247, 0.25) 10%, rgba(168,85,247, 0.25) 90%, transparent);
+    transform: translateY(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ─── Each item wrapper (card + spacing) ─── */
+.step-item {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    padding: 0 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ─── Individual step card ─── */
+.step-card {
+    background: #110C1C;
+    border: 1px solid #1e1230;
+    border-radius: 14px;
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: row;
+    /* icon LEFT | text RIGHT */
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    cursor: default;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.step-card:hover {
+    border-color: rgba(168,85,247, 0.45);
+    box-shadow: 0 0 24px rgba(168,85,247, 0.08);
+    transform: translateY(-4px);
+}
+
+/* Icon wrapper – rounded square */
+.step-icon-wrap {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(168,85,247, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(168,85,247, 0.06);
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.step-card:hover .step-icon-wrap {
+    border-color: #A855F7;
+    background: rgba(168,85,247, 0.12);
+}
+
+.step-icon-wrap i {
+    font-size: 20px;
+    color: #A855F7;
+}
+
+/* Step number */
+.step-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A855F7;
+    letter-spacing: 1px;
+    display: block;
+}
+
+/* Step title */
+.step-card h3 {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+    margin: 0;
+}
+
+/* Step description */
+.step-card p {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Text column: number + title + description stacked vertically */
+.step-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+    background-color: #0D0B14;
+    background-image:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(120,50,200,0.10) 0%, transparent 70%),
+        url('./image/cardbg.png');
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid rgba(168,85,247,0.12);
+    position: relative;
+}
+
+/* dark overlay so bg image doesn't overpower */
+footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 8, 18, 0.82);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.footer-inner,
+.footer-bottom {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Main 3-column grid ── */
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    align-items: start;
+    gap: 0;
+    padding: 56px 56px 44px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ====== LEFT: CTA ====== */
+.footer-cta {
+    padding-right: 48px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-cta h2 {
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.footer-cta h2 span {
+    color: #A855F7;
+    display: block;
+}
+
+.footer-cta > p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.footer-cta button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(90deg, #A855F7 0%, #7c3aed 100%);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.footer-cta button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(168,85,247, 0.25);
+}
+
+.footer-cta button i {
+    color: #fff;
+    font-size: 12px;
+}
+
+/* ====== CENTER: Brand ====== */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 0 32px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+}
+
+/* Footer logo uses the same bracket structure */
+.footer-brand .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-brand .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.footer-brand .logo-bracket {
+    display: block;
+    width: 7px;
+    height: 22px;
+    border: 2px solid #A855F7;
+}
+
+.footer-brand .logo-bracket-left {
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+}
+
+.footer-brand .logo-bracket-right {
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+}
+
+.footer-brand .logo h1 {
+    font-size: 20px;
+    font-weight: 900;
+    padding: 0 3px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.footer-brand .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.footer-brand .logo-title {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.footer-brand .logo-sub {
+    font-size: 9px;
+    font-weight: 600;
+    color: #A855F7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-brand > p {
+    font-size: 13px;
+    color: #5a4a75;
+    text-align: center;
+    max-width: 220px;
+    line-height: 1.6;
+}
+
+/* Social icon row */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.social-icons i {
+    font-size: 15px;
+    color: #5a4a75;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.social-icons i:hover {
+    color: #A855F7;
+    border-color: rgba(168,85,247,0.4);
+    background: rgba(168,85,247,0.06);
+}
+
+/* ====== RIGHT: Contacts ====== */
+.footer-contact {
+    padding-left: 48px;
+    text-align: left;
+}
+
+.footer-contact h3 {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    margin-bottom: 22px;
+}
+
+.footer-contact p {
+    font-size: 13px;
+    color: #5a4a75;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.4;
+    justify-content: flex-start;
+}
+
+.footer-contact p i {
+    color: #A855F7;
+    font-size: 14px;
+    width: 18px;
+    flex-shrink: 0;
+}
+
+/* ====== BOTTOM BAR ====== */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 56px;
+}
+
+.footer-bottom p {
+    color: #2e2040;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    cursor: default;
+    transition: color 0.3s;
+}
+
+.footer-bottom p:hover {
+    color: #5a4a70;
+}
+

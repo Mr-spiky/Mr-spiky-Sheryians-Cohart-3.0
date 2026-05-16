@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: url('image/background.png') no-repeat center center/cover;
+    color: #fff;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    position: relative;
+    min-height: 130vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    width: 150px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+header nav ul li a.active,
+header nav ul li a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.menu-icon {
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.content .title img{
+    width:500px;
+}
+
+.content p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.buttons .play-now {
+    background: linear-gradient(to right, #e83d95, #f77a5f);
+    color: #fff;
+}
+
+.buttons .watch-trailer {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.buttons button i {
+    margin-right: 10px;
+}
+
+.main-image {
+    flex: 1;
+    text-align: right;
+}
+
+.main-image img {
+    width: 80%;
+}
+
+.scroll-text {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.social-icons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.episodes {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    
+    border-radius: 15px;
+}
+
+.episode-card {
+    position: relative;
+    width: 30%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.episode-card img {
+    width: 100%;
+    display: block;
+}
+
+.episode-card .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    display: none;
+}
+
+.episode-card:hover .play-icon {
+    display: block;
+}
