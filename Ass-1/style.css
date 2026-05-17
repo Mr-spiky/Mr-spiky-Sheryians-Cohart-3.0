@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f1ed;
+    color: #333;
+}
+
+/* Navigation Header */
+.nav {
+    display: flex;
+    padding: 25px 80px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ebe7e1;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.headc {
+    display: flex;
+    gap: 40px;
+}
+
+.headc a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.headc a:hover {
+    color: #7a8c6f;
+}
+
+.headc a:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+
+.headr {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.headr img {
+    width: 24px;
+    cursor: pointer;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    padding: 60px 150px;
+    gap: 80px;
+    background-color: #f5f1ed;
+}
+
+/* Left Sidebar */
+.sidebar {
+    flex: 0 0 350px;
+    padding-right: 30px;
+}
+
+.new-collection {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.leaf-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.product-title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.product-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Colors Section */
+.colors-section {
+    margin-bottom: 50px;
+}
+
+.colors-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.color-options {
+    display: flex;
+    gap: 15px;
+}
+
+.color-option {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.color-option:hover {
+    border-color: #333;
+}
+
+/* Details Section */
+.details-section {
+    margin-bottom: 50px;
+}
+
+.details-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.details-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Features List */
+.features-list {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.feature-item {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    background-color: #f0ebe5;
+    border-radius: 8px;
+}
+
+.feature-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.feature-label {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Center Main Image */
+.main-center {
+    flex: 1.2;
+    position: relative;
+}
+
+.main-image{
+    width: 100%;
+    height: 30%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.product-info-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none; /* Allows clicking through the overlay */
+}
+
+.product-info-overlay .price-section,
+.product-info-overlay .rating-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    pointer-events: all; /* Make buttons clickable */
+}
+
+.product-info-overlay .price {
+    font-size: 24px;
+}
+
+.product-info-overlay .rating {
+    font-size: 12px;
+}
+
+.scarf-label {
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: #999;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transform: rotate(180deg);
+}
+
+/* Right Product Info */
+.main-right {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Thumbnail Gallery */
+.thumbnail-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.thumbnail {
+    width: 70%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #7a8c6f;
+    color: white;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    top: 350px;
+    right: -40px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(122, 140, 111, 0.3);
+}
+
+.btn:hover {
+    background-color: #6a7a5f;
+    transform: scale(1.05);
+}
+
+/* Footer Features */
+.features-footer img{
+    background-color: #f9f7f4;
+    width: 100%;
+    height: 20%;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 60px;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: none;
+    }
+
+    .nav {
+        padding: 20px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 15px 30px;
+    }
+
+    .headc {
+        gap: 20px;
+        font-size: 12px;
+    }
+
+    .product-title {
+        font-size: 48px;
+    }
+
+    .container {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .features-footer {
+        padding: 30px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
