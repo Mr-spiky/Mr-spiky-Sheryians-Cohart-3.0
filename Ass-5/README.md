@@ -1,4 +1,3 @@
-
 # OLIV (Responsive Web Application)
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -11,8 +10,7 @@ A premium, fully responsive web application built purely with semantic HTML5 and
 
 ## 🚀 Live Demo
 
-Check out the live deployment of the project here: https://oliv-main-also-responsive.vercel.app/ 
-
+Check out the live deployment of the project here: [Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-5/)
 
 ---
 
@@ -29,36 +27,39 @@ Check out the live deployment of the project here: https://oliv-main-also-respon
 
 * **Structure:** HTML5 (Semantic tags like `<section>`, `<article>`, `<nav>`)
 * **Styling:** CSS3 (Custom properties/variables, Flexbox, CSS Grid, Media Queries)
-* **Icons & Fonts:** Google Fonts / FontAwesome *(Remove/Edit if not applicable)*
+* **Icons & Fonts:** Google Fonts
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-OLIV-main-also-responsive/
+Ass-5/
 ├── assets/          # Images, logos, and media files
 ├── index.html       # Main landing/entry HTML page
 ├── style.css        # Core stylesheet containing all responsive rules
 └── README.md        # Documentation
-Prerequisites
+```
+
+### Prerequisites
 You only need a modern web browser (e.g., Chrome, Edge, Safari, Firefox).
 
-Installation
+### Installation
 Clone the repository:
-git clone [https://github.com/Pratham707-S/OLIV-main-also-responsive.git](https://github.com/Pratham707-S/OLIV-main-also-responsive.git)
+```bash
+git clone https://github.com/Mr-spiky/Mr-spiky-Sheryians-Cohart-3.0.git
+cd Ass-5
+```
 
-cd OLIV-main-also-responsive
+---
 
-📝 License
+## 📝 License
 Distributed under the MIT License. See LICENSE for more information.
 
-👤 Author
-Pratham - @Pratham707-S,@parth021101,harsh,Rohit
+---
 
+## 👤 Author
 
-### Next Steps:
-1. Copy the code block above.
-2. Paste it into the GitHub web editor you have open.
-3. Click the green **"Commit changes..."** button in the top right to save it to your `main` branch.
+**Shivam Kumar**
 
+* GitHub: [@Mr-spiky](https://github.com/Mr-spiky)

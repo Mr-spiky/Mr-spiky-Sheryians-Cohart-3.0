@@ -40,6 +40,25 @@ All projects are built using HTML5 and CSS3.
 
 ---
 
+## Assignment 4
+
+### Easy
+[Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-4/Easy/)
+
+### Medium
+[Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-4/Medium/)
+
+### Hard
+[Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-4/Hard/)
+
+---
+
+## Assignment 5
+
+[Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-5/)
+
+---
+
 # Folder Structure
 
 ```bash
@@ -59,6 +78,16 @@ Mr-spiky-Sheryians-Cohart-3.0
 │   ├── Easy
 │   ├── Medium
 │   └── Hard
+│
+├── Ass-4
+│   ├── Easy
+│   ├── Medium
+│   └── Hard
+│
+├── Ass-5
+│   ├── assets
+│   ├── index.html
+│   └── style.css
 │
 └── README.md
 ```
@@ -87,7 +116,7 @@ Open any project folder and run the `index.html` file in your browser.
 Example:
 
 ```bash
-cd Ass-2/Easy
+cd Ass-5
 ```
 
 ---
