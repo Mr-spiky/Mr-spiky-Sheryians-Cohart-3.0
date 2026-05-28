@@ -59,6 +59,13 @@ All projects are built using HTML5 and CSS3.
 
 ---
 
+## Assignment 6
+
+[Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-6/)
+
+---
+
+
 # Folder Structure
 
 ```bash
@@ -88,6 +95,13 @@ Mr-spiky-Sheryians-Cohart-3.0
 │   ├── assets
 │   ├── index.html
 │   └── style.css
+│
+├── Ass-6
+│   ├── css
+│   │   └── style.css
+│   ├── js
+│   │   └── script.js
+│   └── index.html
 │
 └── README.md
 ```
