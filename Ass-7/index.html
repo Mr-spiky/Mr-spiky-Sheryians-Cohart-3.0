@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Stay Productive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="./TASK_LOGO.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ===== TOP NAV ===== -->
+  <nav class="topbar">
+    <div class="brand">
+      <div class="brand-icon">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">TaskFlow</span>
+        <span class="brand-sub">Stay Productive</span>
+      </div>
+    </div>
+    <button id="themeBtn" title="Toggle theme">
+      <i id="icon" class="fa-solid fa-moon"></i>
+    </button>
+  </nav>
+
+  <!-- ===== HERO BANNER with stats ===== -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-greeting">Good day! 👋</p>
+      <h2 class="hero-title">You have <span id="pendingTasks">0</span> tasks pending</h2>
+      <p class="hero-sub">Keep going — you're doing great!</p>
+
+      <!-- progress bar -->
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span>Completion</span>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box" id="box-total">
+        <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <p id="totalTasks" class="stat-num">0</p>
+        <p class="stat-lbl">Total</p>
+      </div>
+      <div class="stat-box" id="box-done">
+        <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <p id="completedTasks" class="stat-num">0</p>
+        <p class="stat-lbl">Done</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN WORK AREA ===== -->
+  <main class="workspace">
+
+    <!-- Add Task Form -->
+    <div class="add-card">
+      <h3 class="add-title"><i class="fa-solid fa-plus"></i> New Task</h3>
+      <div class="input-row">
+        <input class="task-input" type="text" placeholder="What do you need to do?" />
+        <select id="categorySelect">
+          <option value="work">💼 Work</option>
+          <option value="personal">🏠 Personal</option>
+          <option value="urgent">🔥 Urgent</option>
+        </select>
+        <button class="btn-add">Add</button>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-tabs">
+        <button class="tab active" id="all-btn">All</button>
+        <button class="tab" id="completed-btn">Done</button>
+        <button class="tab" id="pending-btn">Pending</button>
+      </div>
+      <button class="btn-clear">
+        <i class="fa-solid fa-broom"></i> Clear Done
+      </button>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state">
+      <img class="empty-img" src="image/empty.png" alt="No tasks" />
+      <h3 class="empty-title">Nothing here yet!</h3>
+      <p class="empty-sub">Add your first task above to get started.</p>
+    </div>
+
+    <!-- Task List -->
+    <div class="task-list"></div>
+
+  </main>
+
+  <!-- ===== DOM CONCEPTS SECTION ===== -->
+  <section class="concepts">
+    <h2 class="concepts-heading">
+      <i class="fa-solid fa-book-open"></i> DOM Concepts
+    </h2>
+
+    <div class="concepts-grid">
+
+      <!-- Pipeline card -->
+      <div class="concept-card">
+        <h3 class="concept-title">Browser Rendering Pipeline</h3>
+        <div class="pipeline-steps">
+          <div class="step"><span class="step-num">1</span> HTML Parsing</div>
+          <div class="step-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="step"><span class="step-num">2</span> Tokenization</div>
+          <div class="step-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="step"><span class="step-num">3</span> DOM Tree</div>
+          <div class="step-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="step"><span class="step-num">4</span> CSSOM Tree</div>
+          <div class="step-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="step"><span class="step-num">5</span> Render Tree</div>
+        </div>
+      </div>
+
+      <!-- Code comparison card -->
+      <div class="concept-card">
+        <h3 class="concept-title">input.value vs getAttribute('value')</h3>
+        <div class="code-compare">
+          <div class="code-block green-border">
+            <p class="code-label">✅ Live Value</p>
+            <code>input.value</code>
+            <p class="code-desc">Returns the current value — updates in real time as user types.</p>
+          </div>
+          <div class="code-block orange-border">
+            <p class="code-label">⚠️ HTML Attribute</p>
+            <code>input.getAttribute("value")</code>
+            <p class="code-desc">Returns the original HTML value — does not update automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event bubbling card -->
+      <div class="concept-card full-span">
+        <h3 class="concept-title">Event Bubbling vs Capturing</h3>
+        <div class="bubble-demo">
+          <div class="bubble-box grandparent">
+            <span class="box-label">Grandparent</span>
+            <div class="bubble-box parent">
+              <span class="box-label">Parent</span>
+              <button class="child">Click Me — Child Button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
