@@ -71,6 +71,12 @@ All projects are built using HTML5, CSS3, and Vanilla JavaScript.
 
 ---
 
+## Assignment 8 — FinTrack Pro 💰
+
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-8/)
+
+---
+
 # 📂 Folder Structure
 
 ```bash
@@ -115,6 +121,11 @@ Mr-spiky-Sheryians-Cohart-3.0
 │   ├── script.js
 │   └── TASK_LOGO.png
 │
+├── Ass-8
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+│
 └── README.md
 ```
 
@@ -143,7 +154,7 @@ Open any project folder and run the `index.html` file in your browser.
 Example:
 
 ```bash
-cd Ass-7
+cd Ass-8
 ```
 
 ---
