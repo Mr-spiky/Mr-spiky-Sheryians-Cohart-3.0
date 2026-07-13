@@ -106,6 +106,8 @@ function tickClock() {
     if (tod === 'night') startStarfield();
     else stopStarfield();
   }
+
+  updatePlannerActiveSlot();
 }
 
 // ─────────────────────────────────────────────────────
@@ -324,6 +326,8 @@ const TIME_SLOTS = [
   '18:00','19:00','20:00','21:00','22:00','23:00',
 ];
 
+let lastActiveHourSlot = null;
+
 function fmtSlot(slot) {
   const [h] = slot.split(':').map(Number);
   const period  = h < 12 ? 'AM' : 'PM';
@@ -345,6 +349,45 @@ function scrollToCurrentSlot() {
   if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
 }
 
+function updatePlannerActiveSlot() {
+  const now = new Date();
+  const curH = String(now.getHours()).padStart(2, '0');
+  const curSlot = `${curH}:00`;
+
+  if (curSlot === lastActiveHourSlot) return;
+  lastActiveHourSlot = curSlot;
+
+  const rows = document.querySelectorAll('.planner-slots .slot-row');
+  rows.forEach(row => {
+    const slot = row.dataset.slot;
+    const isCurrent = slot === curSlot;
+
+    // Toggle the 'is-now' class
+    row.classList.toggle('is-now', isCurrent);
+
+    // Toggle the input placeholder
+    const inp = row.querySelector('.slot-input');
+    if (inp) {
+      inp.placeholder = isCurrent ? 'Active slot now…' : 'Add a plan…';
+    }
+
+    // Update the NOW badge
+    const existingBadge = row.querySelector('.slot-now-badge');
+    if (isCurrent && !existingBadge) {
+      const badge = document.createElement('span');
+      badge.className = 'slot-now-badge';
+      badge.textContent = 'NOW';
+      badge.setAttribute('aria-hidden', 'true');
+      row.appendChild(badge);
+    } else if (!isCurrent && existingBadge) {
+      existingBadge.remove();
+    }
+  });
+
+  // Smooth scroll to the newly active slot
+  scrollToCurrentSlot();
+}
+
 function initPlanner() {
   const now     = new Date();
   const container = document.getElementById('planner-slots');
@@ -364,6 +407,7 @@ function initPlanner() {
     const isCurrent = slot === curSlot;
     const row = document.createElement('div');
     row.className = `slot-row${isCurrent ? ' is-now' : ''}`;
+    row.dataset.slot = slot;
 
     const timeEl = document.createElement('span');
     timeEl.className = 'slot-time';
@@ -404,6 +448,7 @@ function initPlanner() {
     container.appendChild(row);
   }
 
+  lastActiveHourSlot = curSlot;
   updatePlannerMeta();
   scrollToCurrentSlot();
 }
@@ -722,13 +767,12 @@ async function fetchQuote() {
   try {
     const controller = new AbortController();
     const timeout    = setTimeout(() => controller.abort(), 4000);
-    const res = await fetch('https://api.quotable.io/quotes/random?limit=1', { signal: controller.signal });
+    const res = await fetch('https://dummyjson.com/quotes/random', { signal: controller.signal });
     clearTimeout(timeout);
 
     if (res.ok) {
       const data = await res.json();
-      const item = Array.isArray(data) ? data[0] : data;
-      if (item?.content) quote = { content: item.content, author: item.author || 'Unknown' };
+      if (data?.quote) quote = { content: data.quote, author: data.author || 'Unknown' };
     }
   } catch {}
 
