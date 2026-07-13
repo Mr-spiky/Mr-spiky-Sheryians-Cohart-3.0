@@ -77,6 +77,12 @@ All projects are built using HTML5, CSS3, and Vanilla JavaScript.
 
 ---
 
+## Assignment 9 — TUFFANI ⚡
+
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-9/)
+
+---
+
 # 📂 Folder Structure
 
 ```bash
@@ -126,6 +132,11 @@ Mr-spiky-Sheryians-Cohart-3.0
 │   ├── style.css
 │   └── app.js
 │
+├── Ass-9
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
 └── README.md
 ```
 
@@ -154,7 +165,7 @@ Open any project folder and run the `index.html` file in your browser.
 Example:
 
 ```bash
-cd Ass-8
+cd Ass-9
 ```
 
 ---

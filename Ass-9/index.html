@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="FlowSpace — Your all-in-one productivity dashboard. Manage tasks, plan your day, set goals, track focus time, stay motivated, and check the weather — all on one screen." />
+  <title>Tuffani — Productivity Dashboard</title>
+
+  <script>
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem('fs_theme')) || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { }
+      var h = new Date().getHours();
+      var tod = h >= 5 && h < 9 ? 'dawn' : h >= 9 && h < 12 ? 'morning' : h >= 12 && h < 17 ? 'afternoon' : h >= 17 && h < 20 ? 'evening' : 'night';
+      document.documentElement.classList.add('time-' + tod);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2288%22>⚡</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="bg-time" aria-hidden="true"></div>
+  <canvas id="starCanvas" aria-hidden="true"></canvas>
+
+  <div id="app">
+
+    <!-- ═══ TOPBAR ════════════════════════════════════════ -->
+    <header class="topbar" role="banner">
+      <div class="topbar-brand">
+        <img class="logo"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37exZkMJfzdenKOWAekJ0j7U3jMHbpgo-XK0GvstGHgzJQ9DEk6V1WWjr&s=10"
+          alt="">
+      </div>
+      <div class="topbar-clock" aria-label="Current time and date">
+        <div class="clock-time" id="clockTime">--:--:-- --</div>
+        <div class="clock-date" id="clockDate">Loading...</div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
+    </header>
+
+
+    <!-- ═══ DASHBOARD — 3-column full screen live layout ═══ -->
+    <main id="dashboard" role="main">
+      <div class="dash-grid">
+
+
+        <!-- ──────────────────────────────────────────────
+             LEFT COLUMN — Todo List & Weather
+        ────────────────────────────────────────────────── -->
+        <aside class="dash-col dash-left">
+
+          <!-- Todo List -->
+          <div class="widget widget-todo">
+            <div class="widget-head">
+              <span class="widget-title">📝 Todo List</span>
+              <span class="widget-badge" id="todo-meta">No tasks</span>
+            </div>
+
+            <div class="input-row">
+              <input type="text" id="todo-input" placeholder="New task…" maxlength="250" autocomplete="off" />
+              <button class="btn-add" id="todo-add-btn" aria-label="Add task" title="Add task">＋</button>
+            </div>
+
+            <div class="filter-row" id="todo-filters" role="tablist" aria-label="Filter tasks">
+              <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All</button>
+              <button class="filter-pill" data-filter="active" role="tab" aria-selected="false">Active</button>
+              <button class="filter-pill" data-filter="completed" role="tab" aria-selected="false">Done</button>
+              <button class="filter-pill" data-filter="important" role="tab" aria-selected="false">⭐</button>
+            </div>
+
+            <div class="task-list-wrap scrollable-area">
+              <ul class="task-list" id="todo-list" aria-label="Tasks" aria-live="polite"></ul>
+              <p class="empty-hint" id="todo-empty">Add your first task above ↑</p>
+            </div>
+          </div>
+
+          <!-- Weather Widget -->
+          <div class="widget widget-weather">
+            <div class="widget-head">
+              <span class="widget-title">🌤️ Weather</span>
+              <button class="btn-icon-sm" id="wx-refresh-btn" aria-label="Refresh weather" title="Refresh">↻</button>
+            </div>
+
+            <div class="wx-state" id="wx-loading" aria-live="polite">
+              <div class="spinner"></div>
+              <p>Detecting location…</p>
+            </div>
+
+            <div class="wx-state hidden" id="wx-data">
+              <div class="wx-inline-hero">
+                <span class="wx-icon-lg" id="wx-icon" aria-hidden="true">🌤️</span>
+                <div>
+                  <div class="wx-temp-lg" id="wx-temp" aria-label="Temperature">--°C</div>
+                  <div class="wx-feels-sm" id="wx-feels">Feels like --°C</div>
+                </div>
+              </div>
+              <div class="wx-loc-row">
+                <span aria-hidden="true">📍</span>
+                <span id="wx-city">Unknown</span>
+              </div>
+              <div class="wx-cond-sm" id="wx-condition">--</div>
+              <div class="wx-detail-row">
+                <div class="wx-chip">
+                  <span aria-hidden="true">💧</span>
+                  <span id="wx-humidity">--%</span>
+                </div>
+                <div class="wx-chip">
+                  <span aria-hidden="true">💨</span>
+                  <span id="wx-wind">-- km/h</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wx-state hidden" id="wx-error">
+              <p class="wx-err-icon" aria-hidden="true">⚠️</p>
+              <p class="wx-err-msg">Could not load weather</p>
+              <p class="wx-err-sub" id="wx-error-msg">Allow location access and try again.</p>
+              <button class="btn-outline" id="wx-retry-btn">Retry</button>
+            </div>
+          </div>
+
+        </aside>
+
+
+        <!-- ──────────────────────────────────────────────
+             CENTER COLUMN — Greeting & Daily Planner
+        ────────────────────────────────────────────────── -->
+        <div class="dash-col dash-center">
+
+          <div class="greeting-block">
+            <h1 id="greetingText">Good afternoon...</h1>
+            <p class="greeting-sub" id="planner-date">Loading date...</p>
+          </div>
+
+          <!-- Daily Planner (Now inline and fully usable) -->
+          <div class="widget widget-planner flex-grow-widget">
+            <div class="widget-head">
+              <span class="widget-title">📅 Daily Planner</span>
+              <span class="widget-badge" id="planner-meta">Plan your day</span>
+            </div>
+            <div class="planner-hint">Auto-saves as you type. Matches your local schedule.</div>
+            <div class="planner-slots scrollable-area" id="planner-slots" aria-label="Daily time slots"></div>
+          </div>
+
+        </div>
+
+
+        <!-- ──────────────────────────────────────────────
+             RIGHT COLUMN — Goals, Pomodoro, and Quote
+        ────────────────────────────────────────────────── -->
+        <aside class="dash-col dash-right">
+
+          <!-- Daily Goals (Now inline and fully usable) -->
+          <div class="widget widget-goals">
+            <div class="widget-head">
+              <span class="widget-title">🎯 Daily Goals</span>
+              <span class="widget-badge" id="goals-meta">No goals set</span>
+            </div>
+
+            <div class="goals-progress-card">
+              <div class="progress-info">
+                <span class="progress-label">Today's Progress</span>
+                <span class="progress-count" id="goals-count">0 of 0 completed</span>
+              </div>
+              <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+                id="goals-progress-track">
+                <div class="progress-fill" id="goals-bar"></div>
+              </div>
+            </div>
+
+            <div class="input-row">
+              <input type="text" id="goals-input" placeholder="Add a goal for today…" maxlength="250"
+                autocomplete="off" />
+              <button class="btn-add btn-goals" id="goals-add-btn" aria-label="Add goal" title="Add goal">＋</button>
+            </div>
+
+            <div class="task-list-wrap scrollable-area" style="max-height: 120px;">
+              <ul class="task-list" id="goals-list" aria-label="Goals" aria-live="polite"></ul>
+              <p class="empty-hint" id="goals-empty">Set your first goal above ↑</p>
+            </div>
+          </div>
+
+          <!-- Pomodoro Timer -->
+          <div class="widget widget-pomo">
+            <div class="widget-head">
+              <span class="widget-title">⏱️ Pomodoro</span>
+              <span class="widget-badge" id="pomodoro-meta">Ready</span>
+            </div>
+
+            <div class="pomo-tabs" role="tablist" aria-label="Timer mode">
+              <button class="pomo-tab active" data-mode="work" role="tab" aria-selected="true">Focus</button>
+              <button class="pomo-tab" data-mode="short" role="tab" aria-selected="false">Short</button>
+              <button class="pomo-tab" data-mode="long" role="tab" aria-selected="false">Long</button>
+            </div>
+
+            <div class="pomo-ring-wrap">
+              <svg class="pomo-svg" viewBox="0 0 220 220" aria-hidden="true">
+                <circle class="ring-bg" cx="110" cy="110" r="96" />
+                <circle class="ring-fg" id="pomoRing" cx="110" cy="110" r="96" />
+              </svg>
+              <div class="pomo-center" aria-live="polite">
+                <time class="pomo-time" id="pomoTime" datetime="PT25M">25:00</time>
+                <span class="pomo-mode-label" id="pomoModeLabel">Focus Session</span>
+              </div>
+            </div>
+
+            <div class="pomo-sessions" aria-label="Session progress">
+              <span class="session-dot" data-s="1" aria-hidden="true"></span>
+              <span class="session-dot" data-s="2" aria-hidden="true"></span>
+              <span class="session-dot" data-s="3" aria-hidden="true"></span>
+              <span class="session-dot" data-s="4" aria-hidden="true"></span>
+              <span class="session-label">Session <span id="pomoSession">1</span>/4</span>
+            </div>
+
+            <div class="pomo-btns">
+              <button class="pomo-btn-secondary" id="pomoReset" aria-label="Reset timer">↺</button>
+              <button class="pomo-btn-primary" id="pomoStartPause" aria-label="Start or pause timer">▶ Start</button>
+              <button class="pomo-btn-secondary" id="pomoSkip" aria-label="Skip session">›</button>
+            </div>
+          </div>
+
+          <!-- Motivation Quotes -->
+          <div class="widget widget-quote" aria-label="Daily motivation">
+            <span class="quote-deco" aria-hidden="true">"</span>
+            <blockquote class="quote-text" id="quoteText" aria-live="polite">
+              Loading your daily inspiration…
+            </blockquote>
+            <cite class="quote-author" id="quoteAuthor">— ...</cite>
+            <button class="btn-new-quote" id="newQuoteBtn" aria-label="Load a new quote">✨ New Quote</button>
+          </div>
+
+        </aside>
+      </div>
+    </main>
+
+  </div><!-- /#app -->
+
+  <div id="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
