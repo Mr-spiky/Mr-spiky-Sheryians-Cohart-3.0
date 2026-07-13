@@ -284,7 +284,7 @@ function initTodo() {
     const task = todos.find(t => t.id === id);
     if (!task) return;
 
-    if (e.target.classList.contains('task-check')) {
+    if (e.target.classList.contains('task-check') || e.target.classList.contains('task-text') || e.target === li) {
       task.done = !task.done;
     } else if (e.target.dataset.action === 'star') {
       task.important = !task.important;
@@ -541,7 +541,7 @@ function initGoals() {
     const goal = goals.find(g => g.id === id);
     if (!goal) return;
 
-    if (e.target.classList.contains('task-check')) {
+    if (e.target.classList.contains('task-check') || e.target.classList.contains('task-text') || e.target === li) {
       goal.done = !goal.done;
       if (goal.done) showToast(`Goal done: "${goal.text.slice(0, 30)}" ✅`, 'success');
     } else if (e.target.dataset.action === 'del') {
