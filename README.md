@@ -83,6 +83,12 @@ All projects are built using HTML5, CSS3, and Vanilla JavaScript.
 
 ---
 
+## Assignment 10 — SkyMart 🛒
+
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-10/SkyMart-Project/dist/)
+
+---
+
 # 📂 Folder Structure
 
 ```bash
@@ -137,6 +143,17 @@ Mr-spiky-Sheryians-Cohart-3.0
 │   ├── style.css
 │   └── script.js
 │
+├── Ass-10
+│   └── SkyMart-Project
+│       ├── src
+│       │   ├── components
+│       │   ├── context
+│       │   ├── layouts
+│       │   ├── pages
+│       │   └── routes
+│       ├── index.html
+│       └── vite.config.js
+│
 └── README.md
 ```
 
@@ -147,6 +164,11 @@ Mr-spiky-Sheryians-Cohart-3.0
 - HTML5
 - CSS3
 - JavaScript (ES6+)
+- React 19
+- React Router v7
+- React Hook Form
+- Tailwind CSS v4
+- Vite
 - Google Fonts
 - Font Awesome
 
