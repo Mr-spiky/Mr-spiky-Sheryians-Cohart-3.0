@@ -10,82 +10,82 @@ All projects are built using HTML5, CSS3, and Vanilla JavaScript.
 
 ## Assignment 1
 
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-1/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-1/)
 
 ---
 
 ## Assignment 2
 
 ### Easy
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Easy/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Easy/)
 
 ### Medium
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Medium/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Medium/)
 
 ### Hard
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Hard/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Hard/)
 
 ---
 
 ## Assignment 3
 
 ### Easy
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-3/Easy/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-3/Easy/)
 
 ### Medium
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-3/Medium/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-3/Medium/)
 
 ### Hard
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-3/Hard/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-3/Hard/)
 
 ---
 
 ## Assignment 4
 
 ### Easy
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-4/Easy/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-4/Easy/)
 
 ### Medium
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-4/Medium/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-4/Medium/)
 
 ### Hard
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-4/Hard/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-4/Hard/)
 
 ---
 
 ## Assignment 5
 
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-5/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-5/)
 
 ---
 
 ## Assignment 6
 
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-6/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-6/)
 
 ---
 
 ## Assignment 7 — TaskFlow ✅
 
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-7/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-7/)
 
 ---
 
 ## Assignment 8 — FinTrack Pro 💰
 
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-8/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-8/)
 
 ---
 
 ## Assignment 9 — TUFFANI ⚡
 
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-9/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-9/)
 
 ---
 
 ## Assignment 10 — SkyMart 🛒
 
-[🔗 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-10/SkyMart-Project/dist/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-10/SkyMart-Project/dist/)
 
 ---
 

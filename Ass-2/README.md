@@ -6,9 +6,9 @@ This repository contains three distinct landing pages created as part of an assi
 
 You can view the live versions of the landing pages here:
 
-*   **Easy:** [Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Easy/)
-*   **Medium:** [Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Medium/)
-*   **Hard:** [Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Hard/)
+*   **Easy:** [Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Easy/)
+*   **Medium:** [Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Medium/)
+*   **Hard:** [Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Hard/)
 
 ## Landing Pages Overview
 

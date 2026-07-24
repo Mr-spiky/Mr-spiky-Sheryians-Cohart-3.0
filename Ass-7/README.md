@@ -15,7 +15,7 @@ A **slick, no-cap Task Manager app** built with pure HTML, CSS & Vanilla JS. No 
 
 > go touch the app fr fr 👇
 
-**[🔗 Live Demo — Click it, don't be shy](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-7/)**
+**[🔗 Live Demo — Click it, don't be shy](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-7/)**
 
 ---
 
