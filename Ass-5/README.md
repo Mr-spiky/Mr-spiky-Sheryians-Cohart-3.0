@@ -10,7 +10,7 @@ A premium, fully responsive web application built purely with semantic HTML5 and
 
 ## 🚀 Live Demo
 
-Check out the live deployment of the project here: [Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-5/)
+Check out the live deployment of the project here: [Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-5/)
 
 ---
 

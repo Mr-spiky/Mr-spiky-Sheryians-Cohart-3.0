@@ -6,7 +6,7 @@
 
 ## 🔗 Live Demo
 
-[🚀 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-10/SkyMart-Project/dist/)
+[🚀 Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-10/SkyMart-Project/dist/)
 
 ---
 

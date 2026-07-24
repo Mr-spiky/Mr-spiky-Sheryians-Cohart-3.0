@@ -11,7 +11,7 @@ A highly interactive, beautiful, and fully responsive recreation of the premium 
 
 ## 🚀 Live Demo
 
-Check out the live deployment of the project here: [Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-6/)
+Check out the live deployment of the project here: [Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-6/)
 
 ---
 

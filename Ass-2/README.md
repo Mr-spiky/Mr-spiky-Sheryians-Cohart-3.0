@@ -6,9 +6,9 @@ This repository contains three distinct landing pages created as part of an assi
 
 You can view the live versions of the landing pages here:
 
-*   **Easy:** [Live Demo](https://mr-spiky.github.io/Sheryians-Cohart-3.0/Easy/)
-*   **Medium:** [Live Demo](https://mr-spiky.github.io/Sheryians-Cohart-3.0/Medium/)
-*   **Hard:** [Live Demo](https://mr-spiky.github.io/Sheryians-Cohart-3.0/Hard/)
+*   **Easy:** [Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Easy/)
+*   **Medium:** [Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Medium/)
+*   **Hard:** [Live Demo](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-2/Hard/)
 
 ## Landing Pages Overview
 
@@ -48,10 +48,10 @@ A detailed and visually rich product page for an insect specimen, "Pachyteria eq
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/Mr-spiky/Sheryians-Cohart-3.0.git
+    git clone https://github.com/Mr-spiky/Mr-spiky-Sheryians-Cohart-3.0.git
     ```
 2.  Navigate to the project directory:
     ```bash
-    cd "Sheryians-Cohart-3.0/Assingments/Ass-2"
+    cd "Mr-spiky-Sheryians-Cohart-3.0/Ass-2"
     ```
 3.  Open the `index.html` file within any of the `Easy`, `Medium`, or `Hard` folders in your web browser to view the pages locally.

@@ -8,7 +8,7 @@ A personal finance tracking web app built entirely in the browser with **no back
 
 ## 🔗 Live Demo
 
-[https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-8/](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-8/)
+[https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-8/](https://www.mrspiky.me/Mr-spiky-Sheryians-Cohart-3.0/Ass-8/)
 
 ---
 
