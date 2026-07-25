@@ -85,7 +85,7 @@ All projects are built using HTML5, CSS3, and Vanilla JavaScript.
 
 ## Assignment 10 — SkyMart 🛒
 
-[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-10/SkyMart-Project/dist/)
+[🔗 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-10/SkyMarty-proj/dist/)
 
 ---
 
