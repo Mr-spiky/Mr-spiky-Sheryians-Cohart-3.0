@@ -6,7 +6,7 @@
 
 ## 🔗 Live Demo
 
-[🚀 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-10/SkyMart-Project/dist/)
+[🚀 Live Demo](https://mr-spiky.github.io/Mr-spiky-Sheryians-Cohart-3.0/Ass-10/SkyMarty-proj/dist/)
 
 ---
 
@@ -220,7 +220,7 @@ const MainLayout = () => <Outlet />;
 
 ```bash
 Ass-10/
-└── SkyMart-Project/
+└── SkyMarty-proj/
     ├── src/
     │   ├── components/
     │   │   ├── Navbar.jsx
@@ -253,7 +253,7 @@ Ass-10/
 
 ```bash
 # Navigate to project folder
-cd Ass-10/SkyMart-Project
+cd Ass-10/SkyMarty-proj
 
 # Install dependencies
 npm install
