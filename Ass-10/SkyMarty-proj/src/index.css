@@ -1,0 +1,356 @@
+@import "tailwindcss";
+
+/* ─── Dark Mode Variant (Tailwind v4) ─────────────────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── Neon color palette ──────────────────────────────────────────── */
+:root {
+  --neon-green:  #39ff14;
+  --neon-cyan:   #00f5ff;
+  --neon-purple: #bf5fff;
+  --neon-amber:  #ffcc00;
+  --card-dark:   #141416;
+  --surface:     #1a1a1d;
+  --surface-2:   #222226;
+  --border-dim:  #2a2a2e;
+}
+
+/* ─── Smooth Transitions for theme changes ────────────────────────── */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   DARK MODE OVERRIDES
+═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Root ─────────────────────────────────────────────────────────── */
+.dark {
+  color-scheme: dark;
+}
+
+/* ─── Page backgrounds ──────────────────────────────────────────────── */
+.dark .min-h-screen,
+.dark .min-h-screen.bg-\[\#f5f3f0\] {
+  background-color: #0c0c0e !important;
+  /* Subtle radial neon gradient for depth */
+  background-image:
+    radial-gradient(ellipse 80% 40% at 20% 0%, rgba(57,255,20,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 30% at 80% 100%, rgba(0,245,255,0.04) 0%, transparent 60%);
+}
+
+.dark .bg-\[\#f5f3f0\] {
+  background-color: #0c0c0e !important;
+}
+
+/* ─── Navbar neon glow ──────────────────────────────────────────────── */
+.dark nav {
+  background-color: #111114 !important;
+  border-bottom-color: rgba(57,255,20,0.25) !important;
+  box-shadow: 0 1px 0 rgba(57,255,20,0.15), 0 4px 20px rgba(0,0,0,0.6) !important;
+}
+
+/* ─── White surfaces → dark cards ──────────────────────────────────── */
+.dark .bg-white {
+  background-color: var(--surface) !important;
+}
+
+/* ─── Off-white / subtle backgrounds ───────────────────────────────── */
+.dark .bg-\[\#faf8f6\] {
+  background-color: var(--card-dark) !important;
+}
+
+.dark .bg-\[\#f0f3ee\] {
+  background-color: #1e1e22 !important;
+}
+
+/* ─── Borders → dim neon outline ───────────────────────────────────── */
+.dark .border-\[\#e8e5e0\] {
+  border-color: var(--border-dim) !important;
+}
+
+.dark .border-\[\#e0dcd7\] {
+  border-color: #333338 !important;
+}
+
+.dark .border-\[\#f0ede8\] {
+  border-color: #222226 !important;
+}
+
+/* ─── Cards: neon border on hover ───────────────────────────────────── */
+.dark .hover\:border-\[\#6b8f71\]:hover {
+  border-color: var(--neon-green) !important;
+  box-shadow:
+    0 0 8px rgba(57,255,20,0.35),
+    0 0 20px rgba(57,255,20,0.12),
+    0 4px 24px rgba(0,0,0,0.5) !important;
+}
+
+/* ─── Rounded-2xl cards: subtle neon glow always ───────────────────── */
+.dark .rounded-2xl.border {
+  box-shadow: 0 0 0 1px rgba(57,255,20,0.06), 0 2px 16px rgba(0,0,0,0.4);
+}
+
+.dark .rounded-2xl.border:hover {
+  box-shadow:
+    0 0 0 1px rgba(57,255,20,0.25),
+    0 0 14px rgba(57,255,20,0.2),
+    0 4px 28px rgba(0,0,0,0.55);
+}
+
+/* ─── Product image container neon tint ─────────────────────────────── */
+.dark .h-56.bg-\[\#faf8f6\],
+.dark .w-24.h-24.bg-\[\#faf8f6\] {
+  background-color: #141416 !important;
+  border-bottom: 1px solid rgba(57,255,20,0.1);
+}
+
+/* ─── Primary text ──────────────────────────────────────────────────── */
+.dark .text-\[\#1a1a1a\] {
+  color: #e8e8f0 !important;
+}
+
+/* ─── Secondary text ────────────────────────────────────────────────── */
+.dark .text-\[\#4a4642\] {
+  color: #9a9aa8 !important;
+}
+
+/* ─── Muted text ────────────────────────────────────────────────────── */
+.dark .text-\[\#8a8580\] {
+  color: #55555f !important;
+}
+
+/* ─── Neon green accent text (prices, brand color) ──────────────────── */
+.dark .text-\[\#6b8f71\] {
+  color: var(--neon-green) !important;
+  text-shadow: 0 0 8px rgba(57,255,20,0.5);
+}
+
+/* ─── Brand name glow ───────────────────────────────────────────────── */
+.dark span.text-lg.font-medium.text-\[\#1a1a1a\] {
+  color: #ffffff !important;
+  text-shadow: 0 0 12px rgba(57,255,20,0.4);
+}
+
+/* ─── Green action buttons → neon glow ──────────────────────────────── */
+.dark .bg-\[\#6b8f71\],
+.dark .bg-\[\#6b8f71\]:not(:hover) {
+  background-color: #1a2e1c !important;
+  border: 1px solid var(--neon-green) !important;
+  color: var(--neon-green) !important;
+  box-shadow: 0 0 10px rgba(57,255,20,0.3), inset 0 0 10px rgba(57,255,20,0.05) !important;
+  text-shadow: 0 0 6px rgba(57,255,20,0.6) !important;
+}
+
+.dark .bg-\[\#6b8f71\]:hover,
+.dark .hover\:bg-\[\#5a7d60\]:hover {
+  background-color: #233826 !important;
+  border-color: var(--neon-green) !important;
+  box-shadow: 0 0 18px rgba(57,255,20,0.5), 0 0 35px rgba(57,255,20,0.2) !important;
+}
+
+/* ─── Active nav item: neon green ───────────────────────────────────── */
+.dark .text-\[\#6b8f71\] {
+  color: var(--neon-green) !important;
+}
+
+/* ─── Category badge pill ────────────────────────────────────────────── */
+.dark .bg-\[\#f0f3ee\].text-\[\#6b8f71\],
+.dark span.bg-\[\#f0f3ee\] {
+  background-color: rgba(57,255,20,0.08) !important;
+  border: 1px solid rgba(57,255,20,0.25) !important;
+  color: var(--neon-green) !important;
+}
+
+/* ─── View toggle (grid/list) selected state & solid primary buttons ─── */
+.dark .bg-\[\#6b8f71\].text-white {
+  background-color: var(--neon-green) !important;
+  color: #0c0c0e !important;
+  box-shadow: 0 0 12px rgba(57,255,20,0.55), 0 0 30px rgba(57,255,20,0.18) !important;
+}
+
+/* ─── Checkout / primary solid-green button: keep neon on hover ──────── */
+.dark .bg-\[\#6b8f71\].text-white:hover,
+.dark .bg-\[\#6b8f71\].text-white.hover\:bg-\[\#5a7d60\]:hover {
+  background-color: #5aff2a !important;   /* slightly lighter neon green */
+  color: #050f05 !important;
+  border-color: #5aff2a !important;
+  box-shadow:
+    0 0 20px rgba(57,255,20,0.75),
+    0 0 45px rgba(57,255,20,0.35),
+    0 0 70px rgba(57,255,20,0.12) !important;
+  text-shadow: none !important;
+  transform: translateY(-1px);
+}
+
+/* ─── Cart badge (red) → neon amber ─────────────────────────────────── */
+.dark .bg-\[\#c45a5a\] {
+  background-color: #ff4500 !important;
+  box-shadow: 0 0 8px rgba(255,69,0,0.7) !important;
+}
+
+/* ─── Stat & icon wrappers ───────────────────────────────────────────── */
+.dark .w-12.h-12.rounded-xl,
+.dark .w-11.h-11.rounded-xl {
+  background-color: rgba(57,255,20,0.08) !important;
+  border: 1px solid rgba(57,255,20,0.18) !important;
+  box-shadow: 0 0 10px rgba(57,255,20,0.08) !important;
+}
+
+.dark .w-24.h-24.rounded-full {
+  background-color: rgba(57,255,20,0.08) !important;
+  border: 1px solid rgba(57,255,20,0.15) !important;
+}
+
+/* ─── Quantity control buttons ───────────────────────────────────────── */
+.dark .w-8.h-8.rounded-lg {
+  background-color: #1e1e22 !important;
+  border: 1px solid rgba(57,255,20,0.2) !important;
+  color: var(--neon-green) !important;
+}
+
+.dark .w-8.h-8.rounded-lg:hover,
+.dark .hover\:bg-\[\#e0dcd7\]:hover {
+  background-color: rgba(57,255,20,0.12) !important;
+  border-color: var(--neon-green) !important;
+  box-shadow: 0 0 8px rgba(57,255,20,0.3) !important;
+}
+
+.dark .bg-\[\#e0dcd7\] {
+  background-color: #1e1e22 !important;
+}
+
+/* ─── Category cards (Home page) ─────────────────────────────────────── */
+.dark .bg-blue-50   { background-color: rgba(0,110,255,0.08)   !important; border-color: rgba(0,180,255,0.25)   !important; }
+.dark .bg-pink-50   { background-color: rgba(255,0,128,0.08)   !important; border-color: rgba(255,80,160,0.25)  !important; }
+.dark .bg-amber-50  { background-color: rgba(255,180,0,0.08)   !important; border-color: rgba(255,200,0,0.25)   !important; }
+.dark .bg-green-50  { background-color: rgba(57,255,20,0.06)   !important; border-color: rgba(57,255,20,0.22)   !important; }
+.dark .bg-orange-50 { background-color: rgba(255,100,0,0.08)   !important; border-color: rgba(255,140,0,0.25)   !important; }
+.dark .bg-purple-50 { background-color: rgba(180,0,255,0.08)   !important; border-color: rgba(180,80,255,0.25)  !important; }
+
+/* ─── Dividers / hairlines ───────────────────────────────────────────── */
+.dark .w-px.bg-\[\#e8e5e0\] {
+  background-color: rgba(57,255,20,0.2) !important;
+}
+
+/* ─── Hero banner subtle neon glow orbs ─────────────────────────────── */
+.dark .bg-\[\#6b8f71\]\/5 {
+  background-color: rgba(57,255,20,0.06) !important;
+}
+
+.dark .bg-\[\#f0f3ee\] {
+  background-color: #1a1a1e !important;
+}
+
+/* ─── Inputs & select ────────────────────────────────────────────────── */
+.dark input:not([type="checkbox"]),
+.dark select {
+  background-color: #141416 !important;
+  border-color: #2a2a30 !important;
+  color: #e8e8f0 !important;
+}
+
+.dark input::placeholder {
+  color: #44444e !important;
+}
+
+.dark input:not([type="checkbox"]):focus,
+.dark select:focus {
+  border-color: var(--neon-green) !important;
+  box-shadow: 0 0 0 2px rgba(57,255,20,0.2), 0 0 12px rgba(57,255,20,0.15) !important;
+  outline: none !important;
+}
+
+/* ─── "Premium" badge ───────────────────────────────────────────────── */
+.dark .text-\[\#6b8f71\].bg-\[\#f0f3ee\] {
+  background-color: rgba(57,255,20,0.1) !important;
+  color: var(--neon-green) !important;
+  border: 1px solid rgba(57,255,20,0.3) !important;
+}
+
+/* ─── Footer ────────────────────────────────────────────────────────── */
+.dark footer {
+  border-top: 1px solid rgba(57,255,20,0.1) !important;
+}
+
+/* ─── Hover row items (top rated / new arrivals) ────────────────────── */
+.dark .hover\:bg-\[\#faf8f6\]:hover,
+.dark .hover\:bg-\[\#f5f3f0\]:hover {
+  background-color: rgba(57,255,20,0.04) !important;
+}
+
+/* ─── Logout button keep red neon ───────────────────────────────────── */
+.dark .text-\[\#c45a5a\] {
+  color: #ff4d6d !important;
+  text-shadow: 0 0 8px rgba(255,77,109,0.5) !important;
+}
+
+.dark .hover\:text-\[\#a84a4a\]:hover {
+  color: #ff2048 !important;
+  text-shadow: 0 0 12px rgba(255,32,72,0.7) !important;
+}
+
+/* ─── Order summary total neon ───────────────────────────────────────── */
+.dark .text-xl.font-bold.text-\[\#6b8f71\] {
+  color: var(--neon-green) !important;
+  text-shadow: 0 0 14px rgba(57,255,20,0.6) !important;
+}
+
+/* ─── Checkout button full neon ─────────────────────────────────────── */
+.dark button.bg-\[\#6b8f71\] {
+  background-color: #0f2011 !important;
+  border: 1px solid var(--neon-green) !important;
+  color: var(--neon-green) !important;
+  box-shadow: 0 0 14px rgba(57,255,20,0.35), inset 0 0 14px rgba(57,255,20,0.06) !important;
+}
+
+.dark button.bg-\[\#6b8f71\]:hover {
+  background-color: #142816 !important;
+  box-shadow: 0 0 24px rgba(57,255,20,0.55), 0 0 50px rgba(57,255,20,0.2) !important;
+}
+
+/* ─── Loading spinner neon ───────────────────────────────────────────── */
+.dark .border-\[\#6b8f71\] {
+  border-color: var(--neon-green) !important;
+  filter: drop-shadow(0 0 6px var(--neon-green));
+}
+
+/* ─── Scrollbar neon ─────────────────────────────────────────────────── */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0c0c0e;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(57,255,20,0.3);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(57,255,20,0.7);
+  box-shadow: 0 0 6px var(--neon-green);
+}
+
+/* ─── Animated neon glow on active nav link ──────────────────────────── */
+@keyframes neon-pulse {
+  0%, 100% { text-shadow: 0 0 6px rgba(57,255,20,0.5); }
+  50%       { text-shadow: 0 0 14px rgba(57,255,20,0.9), 0 0 28px rgba(57,255,20,0.4); }
+}
+
+.dark a.text-\[\#6b8f71\],
+.dark .text-\[\#6b8f71\] {
+  animation: none;
+}
+
+.dark [class*="isActive"] .text-\[\#6b8f71\],
+.dark nav a[aria-current="page"] {
+  animation: neon-pulse 2.5s ease-in-out infinite;
+}
